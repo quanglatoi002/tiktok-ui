@@ -4,13 +4,15 @@ import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Button({ to, href, primary = false, outline = false, children, onClick, ...passProps }) {
+function Button({ to, href, plus, primary = false, outline = false, children, onClick, ...passProps }) {
+    // Setting default of Comp is 'buttton'
     let Comp = 'button';
     const props = {
         onClick,
         ...passProps,
     };
 
+    //Create tag 'to' component/index.js in className='action'
     if (to) {
         props.to = to;
         Comp = Link;
@@ -19,9 +21,11 @@ function Button({ to, href, primary = false, outline = false, children, onClick,
         Comp = 'a';
     }
 
+    //  two bot className for agument(primary)
     const classes = cx('wrapper', {
         primary,
         outline,
+        plus,
     });
 
     return (

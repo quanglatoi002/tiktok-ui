@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faMagnifyingGlass, faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
 import Button from '~/components/Button';
@@ -24,7 +24,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('content')}>
                 <img src={images.logo} alt="Tiktok" />
-
+                {/* Use Tippy of create scroll bar for search*/}
                 <Tippy
                     interactive
                     visible={searchResult.length > 0}
@@ -51,8 +51,15 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
+                {/* Create own tag component  */}
                 <div className={cx('actions')}>
-                    <Button outline>Log in</Button>
+                    <Button plus>
+                        <button className={cx('plus-icon')}>
+                            <FontAwesomeIcon icon={faPlus} />
+                        </button>
+                        <span>Upload</span>
+                    </Button>
+                    <Button primary>Log in</Button>
                 </div>
             </div>
         </header>
