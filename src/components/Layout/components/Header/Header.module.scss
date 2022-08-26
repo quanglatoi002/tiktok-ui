@@ -104,18 +104,18 @@
     margin-right: 0.6rem;
 }
 
-.plus-icon {
-    border-color: #e2e2e2;
+.text-icon {
     margin-right: 8px;
     background-color: var(--white);
-
-    &:hover {
-        cursor: pointer;
-        background-color: rgba(22, 24, 35, 0.03);
-    }
 }
 
-.plus-icon {
-    height: 20px;
-    width: 20px;
+.custom-login {
+    border-color: red;
+}
+
+.more-btn {
+    font-size: 2rem;
+    margin-left: 28px;
+    padding: 4px 8px;
+    background-color: transparent;
 }
